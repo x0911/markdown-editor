@@ -13,7 +13,7 @@ export default new Vuex.Store({
     ### Header 3
     
     Lorem ipsum sit amet.
-    
+
     **bold** *italic* _underline_
     
     [col-left]Content in the left column[/col-left][col-right]Content in the right column[/col-right]

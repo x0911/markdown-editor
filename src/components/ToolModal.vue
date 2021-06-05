@@ -195,6 +195,9 @@ export default {
       this.$set(this, "values", {});
       this.$set(this.models, "fakeProgressRanBefore", false);
       this.$set(this, "tool", tool);
+      if (tool === "footnote") {
+        this.getFootnoteFromLocalStorage();
+      }
       this.$set(this.models, "editor", true);
     },
     close() {
@@ -232,6 +235,12 @@ export default {
     },
     del() {
       this.$set(this.models, "del", true);
+    },
+    getFootnoteFromLocalStorage() {
+      const text = this.$ls.get("markdown-editor.footnote", "");
+      setTimeout(() => {
+        this.$set(this.values, "textarea", text);
+      }, 100);
     },
   },
 };
