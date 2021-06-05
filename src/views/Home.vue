@@ -174,7 +174,10 @@ export default {
       this.$ls.set("markdown-editor.text", text);
     },
     getTextFromLocalStorage() {
-      const text = this.$ls.get("markdown-editor.text", "");
+      const text = this.$ls.get(
+        "markdown-editor.text",
+        this.$store.state.defaultContent
+      );
       setTimeout(() => {
         this.$set(
           this.content,
